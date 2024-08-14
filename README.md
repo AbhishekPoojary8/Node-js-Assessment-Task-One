@@ -1,8 +1,11 @@
 **Node.js Assessment Task One**
+
 This project is a Node.js server application developed using TypeScript with a class-based architecture. The server includes several APIs for handling CSV uploads, retrieving user policies, and aggregating policies.
 
 **Table of Contents**
+
 **Project Overview**
+
 Features
 Setup
 API Endpoints
