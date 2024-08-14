@@ -18,10 +18,22 @@ const processFile = async (filePath: string): Promise<any[]> => {
       .pipe(csvParser())
       .on("data", (data: any) => results.push(data))
       .on("end", () => {
-        fs.unlinkSync(filePath); // Clean up the file after processing
-        resolve(results);
+        //Delay for file upload
+        setTimeout(() => {
+          try {
+            fs.unlinkSync(filePath); // Attempt to delete the file
+            console.log(`File deleted successfully.`);
+          } catch (error) {
+            console.error(`Failed to delete file ${filePath}:`, error);
+            reject(error);
+          }
+          resolve(results);
+        }, 100); // Delay deletion by 100ms
       })
-      .on("error", (error) => reject(error));
+      .on("error", (error) => {
+        console.error("Error processing file:", error);
+        reject(error);
+      });
   });
 };
 

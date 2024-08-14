@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-import AgentModel from "../models/Agent.model";
 import UserModel from "../models/User.model";
 
 export class UserRepositry {

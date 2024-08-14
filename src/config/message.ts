@@ -9,4 +9,9 @@ export const STATUS_MESSAGES = {
 export const ERROR_CODES = {
   BAD_REQUEST: 400,
   INTERNAL_SERVER_ERROR: 500,
+  DATA_NOT_FOUND: 404,
+};
+
+export const SUCCESS_CODES = {
+  SUCCESS: 200,
 };

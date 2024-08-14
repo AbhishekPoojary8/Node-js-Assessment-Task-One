@@ -3,6 +3,7 @@ import express, { Router, Request, Response } from "express";
 import multer from "multer";
 import { FileUploadService } from "../../service/fileUploads.service";
 import { UserService } from "../../service/user.service";
+import { ERROR_CODES } from "../../config/message";
 
 class UserRoutes {
   public router: Router;
@@ -22,7 +23,9 @@ class UserRoutes {
           let { data, status } = policies;
           res.status(status).json(data);
         } catch (error) {
-          res.status(500).json({ message: "Error while finding user" });
+          res
+            .status(ERROR_CODES.INTERNAL_SERVER_ERROR)
+            .json({ message: "Error while finding user" });
         }
       }
     );
@@ -34,7 +37,9 @@ class UserRoutes {
           let { data, status } = aggregates;
           res.status(status).json(data);
         } catch (error) {
-          res.status(500).json({ message: "Error while finding aggregates" });
+          res
+            .status(ERROR_CODES.INTERNAL_SERVER_ERROR)
+            .json({ message: "Error while finding aggregates" });
         }
       }
     );

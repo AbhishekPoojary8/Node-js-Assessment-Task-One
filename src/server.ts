@@ -2,8 +2,6 @@ import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
 import { connectToDatabase } from "./db/connection";
 import setupShutdownHandlers from "./utils/connectionManager";
-import AgentModel from "./db/models/Agent.model";
-import FileUploadRoutes from "./routes/uploads.ts/fileUpload.route";
 import Routes from "./routes/index";
 import apiLimiter from "./utils/rateLimiter";
 

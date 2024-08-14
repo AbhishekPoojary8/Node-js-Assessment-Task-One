@@ -1,15 +1,15 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
 let cachedConnection: typeof mongoose | null = null;
+dotenv.config();
 
 export async function connectToDatabase() {
   if (cachedConnection) {
     return cachedConnection;
   }
 
-  const dbConnection = await mongoose.connect(
-    "mongodb://127.0.0.1:27017/Policy_Managment"
-  );
+  const dbConnection = await mongoose.connect(`${process.env.MONGODB_URI}`);
 
   cachedConnection = dbConnection;
   return dbConnection;
