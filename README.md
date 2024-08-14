@@ -76,15 +76,19 @@ Response: List of policies or error message.
 Endpoint: GET /api/aggregate-user-policies
 Description: Aggregates policy information across all users.
 Response: Aggregated policy data.
+
 **Rate Limiting**
 Rate limiting is implemented to prevent abuse of the API. Each endpoint has specific rate limits configured to ensure fair usage.
+
 **Worker Threads**
 Worker Threads
 Worker threads in Node.js allow you to execute JavaScript code in parallel threads, which can be particularly useful for offloading CPU-intensive tasks. In this project, worker threads are used to handle the processing of CSV files asynchronously. This approach helps prevent the main event loop from being blocked, improving the application's responsiveness and scalability.
+
 **Race Condition**
 In scenarios where concurrent data access might occur, you could use MongoDB's built-in mechanisms or application-level strategies to handle potential race conditions. For example, if you’re updating user policies, ensure that operations are atomic and validate data integrity before applying changes.
-Contributing
+
+**Contributing**
 Feel free to fork the repository and submit pull requests. Please make sure to follow the coding standards and include appropriate tests.
 
-License
+**License**
 This project is licensed under the MIT License - see the LICENSE file for details.
